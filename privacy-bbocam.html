@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>개인정보 처리방침 · Privacy Policy — 뽀샤캠 (BboshaCam)</title>
+  <meta name="description" content="뽀샤캠(BboshaCam, io.cho.bbocam)의 개인정보 처리방침입니다. 사진은 기기 안에서만 처리되며 개발자 서버로 전송되지 않습니다. / Privacy Policy for BboshaCam.">
+  <meta name="robots" content="index,follow">
+  <style>
+:root{
+  --bg:#f4f6f9; --card:#ffffff; --ink:#161b22; --muted:#5b6672; --line:#e3e8ef;
+  --accent:#1f6feb; --accent-soft:#eaf1fe; --warn:#b45309; --radius:16px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",Roboto,Helvetica,Arial,sans-serif;
+  font-size:16px; line-height:1.75; word-break:keep-all; overflow-wrap:anywhere;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent); text-decoration:none}
+a:hover{text-decoration:underline}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:.92em;
+  background:#f1f4f8; border:1px solid var(--line); border-radius:6px; padding:1px 6px}
+.wrap{max-width:820px; margin:0 auto; padding:28px 20px 72px}
+.top{display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; justify-content:space-between;
+  font-size:14px; color:var(--muted); margin-bottom:18px}
+.top a{font-weight:600}
+.hero{background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+  padding:28px 28px 24px; box-shadow:0 1px 2px rgba(16,24,40,.04),0 8px 24px -12px rgba(16,24,40,.10)}
+.eyebrow{display:inline-block; font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--accent); background:var(--accent-soft); border-radius:999px; padding:3px 10px; margin-bottom:14px}
+h1{margin:0 0 6px; font-size:30px; line-height:1.3; letter-spacing:-.01em}
+h1 .en{display:block; font-size:17px; font-weight:600; color:var(--muted); letter-spacing:0; margin-top:4px}
+.appname{margin:10px 0 0; font-size:18px; font-weight:700}
+.appname span{color:var(--muted); font-weight:500}
+.meta{list-style:none; margin:20px 0 0; padding:18px 0 0; border-top:1px solid var(--line);
+  display:grid; grid-template-columns:1fr 1fr; gap:10px 24px; font-size:14.5px}
+.meta li{display:flex; flex-direction:column; gap:1px; min-width:0}
+.meta b{font-size:12px; font-weight:700; letter-spacing:.04em; color:var(--muted); text-transform:uppercase}
+@media (max-width:560px){ .meta{grid-template-columns:1fr} }
+.keypoints{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:22px 0 0}
+@media (max-width:700px){ .keypoints{grid-template-columns:1fr} }
+.kp{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px}
+.kp strong{display:block; font-size:14.5px; margin-bottom:4px}
+.kp span{font-size:13px; color:var(--muted); line-height:1.6}
+.toc{background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+  padding:18px 22px; margin:22px 0 0}
+.toc p{margin:0 0 8px; font-size:12px; font-weight:700; letter-spacing:.06em; color:var(--muted); text-transform:uppercase}
+.toc ol{margin:0; padding-left:20px; font-size:14.5px; columns:2; column-gap:28px}
+@media (max-width:560px){ .toc ol{columns:1} }
+.toc li{margin:3px 0; break-inside:avoid}
+main{margin-top:26px}
+section{background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+  padding:24px 26px; margin-bottom:16px; scroll-margin-top:20px}
+@media (max-width:560px){ section{padding:20px 18px} .hero{padding:22px 18px} }
+h2{display:flex; align-items:baseline; gap:10px; margin:0 0 14px; font-size:19px; line-height:1.45; letter-spacing:-.01em}
+h2 .num{flex:0 0 auto; width:26px; height:26px; border-radius:8px; background:var(--accent-soft); color:var(--accent);
+  font-size:13px; font-weight:800; display:inline-flex; align-items:center; justify-content:center; transform:translateY(-1px)}
+h2 em{font-style:normal; font-weight:600; color:var(--muted); font-size:14.5px}
+h2 em::before{content:"· "; }
+h3{margin:18px 0 6px; font-size:15px; font-weight:700}
+p{margin:0 0 10px}
+p:last-child{margin-bottom:0}
+ul{margin:6px 0 12px; padding-left:20px}
+li{margin:5px 0}
+.ko{font-size:15.5px}
+.en{margin-top:12px; padding:12px 0 0 16px; border-top:1px dashed var(--line); border-left:3px solid var(--accent-soft);
+  font-size:14.5px; color:#3d4753}
+.en h3,.en p,.en li{font-size:14.5px}
+.en ul{margin:4px 0 10px}
+.tag{display:inline-block; font-size:11.5px; font-weight:700; letter-spacing:.06em; color:var(--muted); text-transform:uppercase; margin-bottom:2px}
+.note{background:#fff8ec; border:1px solid #f5e0bd; border-radius:10px; padding:12px 14px; font-size:14px; color:#6c4a12}
+.addr{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:14px; background:#f1f4f8;
+  border:1px solid var(--line); border-radius:8px; padding:8px 10px; display:inline-block; margin:2px 0}
+footer{margin-top:26px; font-size:14px; color:var(--muted)}
+footer .links{display:flex; flex-wrap:wrap; gap:8px 18px; margin-bottom:10px}
+footer .links a{font-weight:600}
+.totop{display:inline-block; margin-top:6px}
+/* index */
+.apps{display:grid; gap:16px; margin-top:22px}
+.app{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:22px 24px;
+  display:grid; gap:6px; box-shadow:0 1px 2px rgba(16,24,40,.04)}
+.app h2{font-size:20px; margin:0 0 2px; display:block}
+.app .sub{font-size:14px; color:var(--muted); margin:0 0 6px}
+.app .desc{font-size:15px; margin:0}
+.app .desc.en2{font-size:14px; color:#3d4753; margin:0}
+.app .acts{display:flex; flex-wrap:wrap; gap:10px; margin-top:12px}
+.btn{display:inline-flex; align-items:center; gap:8px; font-size:14px; font-weight:700; padding:9px 16px;
+  border-radius:10px; border:1px solid var(--line); background:#fff; color:var(--ink)}
+.btn:hover{text-decoration:none; border-color:#c9d4e3; background:#fafcff}
+.btn.primary{background:var(--accent); border-color:var(--accent); color:#fff}
+.btn.primary:hover{background:#1a5fd0}
+.btn.soon{color:var(--muted); background:#f7f9fc; border-style:dashed}
+.pkg{font-size:13px; color:var(--muted)}
+@media print{
+  body{background:#fff} .hero,section,.app,.toc,.kp{box-shadow:none; border-color:#ddd}
+  .top,footer .links{display:none}
+}
+</style>
+</head>
+<body id="top">
+  <div class="wrap">
+
+    <div class="top">
+      <a href="./">← 조봉기 앱 · Apps by Bonggi Cho</a>
+      <span>시행일 / Effective date: 2026-11-20</span>
+    </div>
+
+    <header class="hero">
+      <span class="eyebrow">Privacy Policy · 개인정보 처리방침</span>
+      <h1>개인정보 처리방침<span class="en">Privacy Policy</span></h1>
+      <p class="appname">뽀샤캠 <span>/ BboshaCam</span></p>
+      <ul class="meta">
+        <li><b>앱 이름 / App</b>뽀샤캠 (BboshaCam)</li>
+        <li><b>패키지 / Package</b><code>io.cho.bbocam</code></li>
+        <li><b>개발자 / Developer</b>조봉기 (Bonggi Cho)</li>
+        <li><b>문의 / Contact</b><a href="mailto:cho1036216@gmail.com">cho1036216@gmail.com</a></li>
+        <li><b>시행일 / Effective date</b>2026-11-20</li>
+        <li><b>적용 범위 / Scope</b>Google Play에서 배포되는 뽀샤캠 앱 / The BboshaCam app distributed on Google Play</li>
+      </ul>
+      <div class="keypoints">
+        <div class="kp"><strong>사진은 기기에서만 처리</strong><span>촬영·필터·보정 모두 기기 안에서 이루어지고, 사진은 개발자 서버로 전송되지 않습니다. / Photos are processed only on your device.</span></div>
+        <div class="kp"><strong>서버·계정 없음</strong><span>개발자는 별도 서버를 운영하지 않고 계정도 만들지 않습니다. / No server, no account.</span></div>
+        <div class="kp"><strong>광고는 Google AdMob</strong><span>무료 제공을 위한 광고에 Google AdMob SDK를 사용합니다. / Ads are served by Google AdMob.</span></div>
+      </div>
+    </header>
+
+    <nav class="toc" aria-label="목차 / Contents">
+      <p>목차 · Contents</p>
+      <ol>
+          <li><a href="#s1">개요</a> <span style="color:#8a94a0">/ Overview</span></li>
+          <li><a href="#s2">수집하지 않는 정보</a> <span style="color:#8a94a0">/ Information We Do Not Collect</span></li>
+          <li><a href="#s3">카메라·사진·저장공간</a> <span style="color:#8a94a0">/ Camera, Photos, and Storage</span></li>
+          <li><a href="#s4">광고 (Google AdMob)</a> <span style="color:#8a94a0">/ Advertising (Google AdMob)</span></li>
+          <li><a href="#s5">보관 기간과 삭제</a> <span style="color:#8a94a0">/ Retention and Deletion</span></li>
+          <li><a href="#s6">아동의 개인정보</a> <span style="color:#8a94a0">/ Children's Privacy</span></li>
+          <li><a href="#s7">보안</a> <span style="color:#8a94a0">/ Security</span></li>
+          <li><a href="#s8">방침의 변경</a> <span style="color:#8a94a0">/ Changes to This Policy</span></li>
+          <li><a href="#s9">문의처</a> <span style="color:#8a94a0">/ Contact</span></li>
+      </ol>
+    </nav>
+
+    <main>
+    <section id="s1">
+      <h2><span class="num">1</span>개요 <em>Overview</em></h2>
+      <div class="ko">
+        <p>뽀샤캠(이하 “앱”)은 개발자 조봉기(이하 “개발자”)가 Google Play에서 제공하는 무료 카메라 앱입니다. 이 개인정보 처리방침은 앱이 어떤 정보를 어떻게 다루는지, 이용자가 어떤 선택을 할 수 있는지 설명합니다.</p>
+        <p>요약하면, 앱은 이용자의 개인정보를 수집하지 않으며, 촬영한 사진은 기기 안에서만 처리되고 개발자의 서버로 전송되거나 저장되지 않습니다.</p>
+      </div>
+      <div class="en">
+        <span class="tag">English</span>
+        <p>BboshaCam (the “App”) is a free camera app published on Google Play by the developer Bonggi Cho (“we”, “us”). This Privacy Policy explains what information the App handles, how it is used, and the choices you have.</p>
+        <p>In short: we do not collect your personal information, and the photos you take are processed only on your device — they are never uploaded to or stored on our servers.</p>
+      </div>
+    </section>
+    <section id="s2">
+      <h2><span class="num">2</span>수집하지 않는 정보 <em>Information We Do Not Collect</em></h2>
+      <div class="ko">
+        <p>개발자는 이 앱을 통해 이름, 이메일 주소, 전화번호, 주소, 연락처, 위치, 결제 정보와 같이 이용자를 식별할 수 있는 개인정보를 <strong>수집하지 않습니다</strong>. 회원가입이나 로그인 절차도 없습니다.</p>
+        <p>개발자는 이용자 정보를 판매하거나, 광고 목적 외의 용도로 제3자에게 제공하지 않습니다. 다만 앱에 포함된 광고 SDK가 처리하는 정보는 4항에서 설명합니다.</p>
+      </div>
+      <div class="en">
+        <span class="tag">English</span>
+        <p>We do <strong>not</strong> collect personal information that identifies you — such as your name, email address, phone number, address, contacts, location, or payment details — through this App. There is no sign-up or login.</p>
+        <p>We do not sell your information or share it with third parties other than as described for advertising below. The information handled by the advertising SDK built into the App is described in section 4.</p>
+      </div>
+    </section>
+    <section id="s3">
+      <h2><span class="num">3</span>카메라·사진·저장공간 <em>Camera, Photos, and Storage</em></h2>
+      <div class="ko">
+        <p>앱은 다음 권한을 해당 기능을 실행할 때만 사용합니다.</p>
+        <ul>
+          <li><strong>카메라</strong>: 사진을 촬영하고 화면에 카메라 미리보기를 표시할 때 사용합니다.</li>
+          <li><strong>사진·미디어(갤러리) 접근</strong>: 촬영하거나 편집한 사진을 기기 갤러리에 저장하고, 편집할 기존 사진을 불러올 때 사용합니다.</li>
+          <li><strong>저장공간</strong>: 위 사진 파일을 기기에 저장할 때 사용합니다.</li>
+        </ul>
+        <p>촬영, 필터, 동물 필터, 보정 등 모든 이미지 처리는 <strong>이용자의 기기 안에서만</strong> 이루어집니다. 사진은 개발자의 서버로 전송되지 않고 개발자 서버에 저장되지도 않습니다. 앱은 이미지를 보관하는 서버를 운영하지 않습니다.</p>
+        <p>저장된 사진은 이용자 기기의 갤러리에만 남으며, 이용자가 직접 삭제할 수 있습니다.</p>
+      </div>
+      <div class="en">
+        <span class="tag">English</span>
+        <p>The App asks only for the permissions the feature in use needs:</p>
+        <ul>
+          <li><strong>Camera</strong> — to take photos and show the camera preview on screen.</li>
+          <li><strong>Photos and media (gallery)</strong> — to save the photos you take or edit to your device's gallery, and to open an existing photo you want to edit.</li>
+          <li><strong>Storage</strong> — to write those photo files on your device.</li>
+        </ul>
+        <p>All image processing — capture, filters, animal filters, and touch-ups — happens <strong>only on your device</strong>. Photos are never sent to or stored on our servers, and we do not run a server that holds images.</p>
+        <p>Your photos stay in your device's gallery, and you can delete them yourself at any time.</p>
+      </div>
+    </section>
+    <section id="s4">
+      <h2><span class="num">4</span>광고 (Google AdMob) <em>Advertising (Google AdMob)</em></h2>
+      <div class="ko">
+        <p>이 앱은 무료로 제공되며, 광고 게재를 위해 <strong>Google AdMob 광고 SDK</strong>(Google LLC)를 사용합니다.</p>
+        <ul>
+          <li>AdMob과 그 광고 파트너는 광고 전달·빈도 조절·성과 측정을 위해 <strong>광고 식별자(Android 광고 ID)</strong>, 기기 및 앱 정보(기기 모델, 운영체제 버전, 앱 버전, IP 주소, 대략적인 지역), 광고 노출·클릭 기록 등을 수집·이용할 수 있습니다.</li>
+          <li>이 정보는 Google의 개인정보처리방침(<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>)과 Google의 광고 관련 정책에 따라 처리됩니다. Google이 파트너 앱의 정보를 어떻게 이용하는지는 <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">support.google.com/admob/answer/6128543</a>에서 확인할 수 있습니다.</li>
+          <li>개발자는 AdMob을 통해 특정 이용자를 개인적으로 식별할 수 있는 정보를 제공받지 않습니다.</li>
+          <li>원하지 않는 경우 Android 기기에서 <em>설정 → Google → 광고</em>로 이동해 광고 ID를 재설정하거나 맞춤 광고를 끌 수 있습니다. 앱 자체에는 회원 탈퇴나 로그인 절차가 없습니다.</li>
+        </ul>
+      </div>
+      <div class="en">
+        <span class="tag">English</span>
+        <p>This App is free to use and shows ads through the <strong>Google AdMob advertising SDK</strong> (Google LLC).</p>
+        <ul>
+          <li>AdMob and its advertising partners may collect and use the <strong>advertising identifier (Android Advertising ID)</strong>, device and app information (device model, OS version, app version, IP address, approximate region), and ad impression and click records to deliver ads, limit their frequency, and measure performance.</li>
+          <li>That information is handled under Google's Privacy Policy (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>) and Google's advertising policies. How Google uses information from apps that use its services is described at <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">support.google.com/admob/answer/6128543</a>.</li>
+          <li>We do not receive information from AdMob that identifies you personally.</li>
+          <li>If you prefer, you can reset your advertising ID or turn off personalized ads on Android under <em>Settings → Google → Ads</em>. The App has no account to sign out of or delete.</li>
+        </ul>
+      </div>
+    </section>
+    <section id="s5">
+      <h2><span class="num">5</span>보관 기간과 삭제 <em>Retention and Deletion</em></h2>
+      <div class="ko">
+        <p>개발자는 이용자 데이터를 서버에 보관하지 않으므로, 개발자가 보관하는 개인정보가 없고 개발자에게 삭제를 요청할 데이터도 없습니다.</p>
+        <ul>
+          <li>기기에 저장된 사진: 갤러리 앱에서 직접 삭제할 수 있습니다.</li>
+          <li>앱이 기기에 저장한 설정·캐시: <em>설정 → 앱 → 뽀샤캠 → 저장공간 → 데이터 삭제</em>로 지울 수 있습니다.</li>
+          <li>앱을 삭제하면 앱이 기기에 저장한 데이터도 함께 삭제됩니다.</li>
+          <li>광고 식별자는 기기 설정(설정 → Google → 광고)에서 재설정하거나 삭제할 수 있습니다.</li>
+        </ul>
+      </div>
+      <div class="en">
+        <span class="tag">English</span>
+        <p>We do not keep your data on a server, so there is no personal information held by us and nothing to request deletion of from us.</p>
+        <ul>
+          <li>Photos on your device: delete them in your gallery app.</li>
+          <li>Settings and cache stored by the App: <em>Settings → Apps → BboshaCam → Storage → Clear data</em>.</li>
+          <li>Uninstalling the App removes the data it stored on your device.</li>
+          <li>Your advertising ID can be reset or deleted in your device settings (Settings → Google → Ads).</li>
+        </ul>
+      </div>
+    </section>
+    <section id="s6">
+      <h2><span class="num">6</span>아동의 개인정보 <em>Children's Privacy</em></h2>
+      <div class="ko">
+        <p>이 앱은 만 13세 미만 아동을 주된 대상으로 하지 않으며, 아동의 개인정보를 알면서 수집하지 않습니다. 앱 자체는 개인정보를 수집하지 않지만, 보호자로서 우려되는 점이 있으면 위 문의처로 알려 주시기 바랍니다. 확인하는 대로 필요한 조치를 하겠습니다.</p>
+      </div>
+      <div class="en">
+        <span class="tag">English</span>
+        <p>This App is not primarily directed to children under the age of 13, and we do not knowingly collect personal information from children. The App itself does not collect personal information; if you are a parent or guardian and have a concern, please contact us at the address above and we will take appropriate action.</p>
+      </div>
+    </section>
+    <section id="s7">
+      <h2><span class="num">7</span>보안 <em>Security</em></h2>
+      <div class="ko">
+        <p>사진과 글자 처리는 이용자의 기기 안에서 이루어지고 개발자 서버로 전송되지 않으므로, 전송·보관 과정에서 개인정보가 노출될 위험을 줄입니다. 광고 SDK와의 통신은 암호화된 연결(HTTPS)을 사용합니다. 다만 어떤 기술도 완전한 보안을 보장할 수는 없습니다.</p>
+      </div>
+      <div class="en">
+        <span class="tag">English</span>
+        <p>Because photos and text are processed on your device and are not sent to our servers, there is no transmission or storage of that content on our side. Communication with the advertising SDK uses an encrypted (HTTPS) connection. No method of transmission or storage is completely secure.</p>
+      </div>
+    </section>
+    <section id="s8">
+      <h2><span class="num">8</span>방침의 변경 <em>Changes to This Policy</em></h2>
+      <div class="ko">
+        <p>이 방침이 바뀌면 이 페이지에 개정된 내용과 시행일을 게시합니다. 이용자에게 중요한 변경이 있는 경우 앱 업데이트 또는 Google Play 스토어 등록정보를 통해 알릴 수 있습니다. 현재 시행일은 2026-11-20입니다.</p>
+      </div>
+      <div class="en">
+        <span class="tag">English</span>
+        <p>If this policy changes, we will post the revised policy and its effective date on this page. For material changes we may also notify you through an app update or the Google Play store listing. The current effective date is 2026-11-20.</p>
+      </div>
+    </section>
+    <section id="s9">
+      <h2><span class="num">9</span>문의처 <em>Contact</em></h2>
+      <div class="ko">
+        <p>개인정보 처리와 관련한 문의, 요청은 아래로 보내 주시기 바랍니다.</p>
+        <ul>
+          <li>개발자: 조봉기 (Bonggi Cho)</li>
+          <li>이메일: <a href="mailto:cho1036216@gmail.com">cho1036216@gmail.com</a></li>
+        </ul>
+        <p>확인하는 대로 답변드리겠습니다.</p>
+      </div>
+      <div class="en">
+        <span class="tag">English</span>
+        <p>For any question or request about this policy or your information, contact:</p>
+        <ul>
+          <li>Developer: Bonggi Cho (조봉기)</li>
+          <li>Email: <a href="mailto:cho1036216@gmail.com">cho1036216@gmail.com</a></li>
+        </ul>
+        <p>We will reply as soon as we have reviewed your message.</p>
+      </div>
+    </section>
+    </main>
+
+    <footer>
+      <div class="links">
+                  <a href="privacy-photo-read.html">사진 번역 및 음성 안내 / Photo Read</a>
+          <a href="privacy-mirror.html">심플 거울 / Simple Mirror</a>
+        <a href="/app-ads.txt">app-ads.txt</a>
+      </div>
+      <div>© 2026 조봉기 (Bonggi Cho) · <a href="mailto:cho1036216@gmail.com">cho1036216@gmail.com</a></div>
+      <a class="totop" href="#top">↑ 맨 위로 / Back to top</a>
+    </footer>
+  </div>
+</body>
+</html>
