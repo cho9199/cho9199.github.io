@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Photo Read - Instant Photo Translator for Android</title>
+  <meta name="description" content="Photo Read is a free Android app that reads the text in your photo, translates it into Korean, English, Chinese or Japanese, and speaks it out loud. Works on menus, signs and medicine labels. Photos are processed on your device.">
+  <link rel="canonical" href="https://cho9199.github.io/photo-read.html">
+  <link rel="icon" type="image/png" href="images/photo-read-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Photo Read - Instant Photo Translator">
+  <meta property="og:description" content="Snap a photo. Read the text, translate it, hear it out loud. Free Android app for menus, signs and small print.">
+  <meta property="og:url" content="https://cho9199.github.io/photo-read.html">
+  <meta property="og:image" content="https://cho9199.github.io/images/photo-read-icon.png">
+  <meta name="twitter:card" content="summary">
+  <style>
+:root{
+  --bg:#f4f6f9; --card:#ffffff; --ink:#161b22; --muted:#5b6672; --line:#e3e8ef;
+  --accent:#1f6feb; --accent-deep:#1653b8; --accent-soft:#eaf1fe;
+  --sun:#f5b800; --radius:16px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Apple SD Gothic Neo","Noto Sans",Roboto,Helvetica,Arial,sans-serif;
+  font-size:16px; line-height:1.7; overflow-wrap:break-word; -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent); text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:940px; margin:0 auto; padding:20px 20px 72px}
+
+/* top bar */
+.bar{display:flex; flex-wrap:wrap; gap:10px 18px; align-items:center; justify-content:space-between;
+  font-size:14px; color:var(--muted); padding:6px 2px 16px}
+.bar a.home{font-weight:700; color:var(--ink)}
+.bar .bar-cta{display:inline-flex; align-items:center; gap:7px; font-weight:700; font-size:13.5px;
+  color:#fff; background:var(--accent); border-radius:999px; padding:7px 14px}
+.bar .bar-cta:hover{background:var(--accent-deep); text-decoration:none}
+
+/* hero */
+.hero{position:relative; overflow:hidden; background:linear-gradient(180deg,#eef4ff 0%,#ffffff 68%);
+  border:1px solid var(--line); border-radius:22px; padding:40px 36px 34px;
+  box-shadow:0 1px 2px rgba(16,24,40,.04),0 18px 40px -28px rgba(31,111,235,.45)}
+.hero .grid{display:grid; grid-template-columns:1.25fr 1fr; gap:32px; align-items:center}
+.eyebrow{display:inline-block; font-size:12px; font-weight:800; letter-spacing:.09em; text-transform:uppercase;
+  color:var(--accent); background:var(--accent-soft); border-radius:999px; padding:4px 11px}
+h1{margin:14px 0 0; font-size:clamp(30px,4.6vw,42px); line-height:1.15; letter-spacing:-.02em}
+h1 .name{color:var(--ink)}
+.subtitle{margin:6px 0 0; font-size:clamp(17px,2.3vw,20px); font-weight:700; color:var(--accent)}
+.tagline{margin:14px 0 0; font-size:16.5px; color:#37414d; max-width:36em}
+.cta{display:flex; flex-wrap:wrap; gap:10px; margin-top:22px}
+.btn{display:inline-flex; align-items:center; gap:9px; font-size:15px; font-weight:700; padding:12px 20px;
+  border-radius:12px; border:1px solid var(--line); background:#fff; color:var(--ink); cursor:pointer}
+.btn:hover{text-decoration:none; border-color:#c9d4e3; background:#fafcff}
+.btn.primary{background:var(--accent); border-color:var(--accent); color:#fff; box-shadow:0 8px 18px -12px rgba(31,111,235,.9)}
+.btn.primary:hover{background:var(--accent-deep); border-color:var(--accent-deep)}
+.btn svg{width:18px; height:18px; flex:0 0 auto}
+.free-line{margin:12px 0 0; font-size:13.5px; color:var(--muted)}
+.appicon{display:block; width:100%; max-width:230px; margin:0 auto; border-radius:26%;
+  box-shadow:0 18px 34px -18px rgba(16,24,40,.45)}
+
+/* chips */
+.chips{display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:26px 0 0}
+.chip{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 16px}
+.chip strong{display:block; font-size:14.5px; margin-bottom:3px}
+.chip span{font-size:13px; color:var(--muted); line-height:1.55}
+
+main{margin-top:26px}
+section{background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+  padding:26px 28px; margin-bottom:16px; scroll-margin-top:20px}
+h2{margin:0 0 6px; font-size:21px; line-height:1.4; letter-spacing:-.01em}
+.lede{margin:0 0 18px; color:var(--muted); font-size:15px}
+h3{margin:0 0 4px; font-size:15.5px}
+p{margin:0 0 10px}
+p:last-child{margin-bottom:0}
+ul{margin:6px 0 0; padding-left:20px}
+li{margin:6px 0}
+.cols{display:grid; grid-template-columns:repeat(2,1fr); gap:16px}
+.box{border:1px solid var(--line); border-radius:12px; padding:16px 18px; background:#fbfcfe}
+.box p{font-size:14.5px; color:#3d4753; margin:6px 0 0}
+.ico{display:inline-flex; width:28px; height:28px; border-radius:9px; background:var(--accent-soft);
+  color:var(--accent); align-items:center; justify-content:center; font-size:15px; font-weight:800; margin-bottom:6px}
+ol.steps{counter-reset:s; list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(4,1fr); gap:14px}
+ol.steps li{counter-increment:s; margin:0; border:1px solid var(--line); border-radius:12px; padding:16px;
+  font-size:14.5px; color:#3d4753; background:#fbfcfe}
+ol.steps li::before{content:counter(s); display:inline-flex; width:24px; height:24px; border-radius:50%;
+  background:var(--accent); color:#fff; font-size:12.5px; font-weight:800; align-items:center;
+  justify-content:center; margin-bottom:8px}
+ol.steps b{display:block; color:var(--ink); font-size:14.5px; margin-bottom:2px}
+.langs{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+.langs span{font-size:14px; font-weight:600; border:1px solid var(--line); background:#fbfcfe;
+  border-radius:999px; padding:6px 14px}
+.note{background:#fff8ec; border:1px solid #f5e0bd; border-radius:12px; padding:14px 16px; font-size:14px; color:#6c4a12}
+.note b{color:#5a3d0c}
+.split{display:grid; grid-template-columns:1.1fr 1fr; gap:24px; align-items:start}
+.example{border:1px solid var(--line); border-radius:14px; overflow:hidden; background:#fbfcfe}
+.example .cap{font-size:11.5px; font-weight:800; letter-spacing:.07em; text-transform:uppercase; color:var(--muted);
+  padding:9px 14px; border-bottom:1px solid var(--line); background:#f1f5fb}
+.example .row{padding:13px 14px; border-bottom:1px solid var(--line); font-size:14.5px}
+.example .row:last-child{border-bottom:0}
+.example .row small{display:block; font-size:11.5px; font-weight:700; letter-spacing:.05em; color:var(--muted);
+  text-transform:uppercase; margin-bottom:2px}
+.example .row.translated{background:var(--accent-soft)}
+footer{margin-top:24px; font-size:14px; color:var(--muted)}
+footer .links{display:flex; flex-wrap:wrap; gap:8px 20px; margin-bottom:10px}
+footer .links a{font-weight:600}
+@media (max-width:820px){
+  .hero .grid{grid-template-columns:1fr; gap:22px}
+  .appicon{max-width:150px; order:-1}
+  .chips{grid-template-columns:repeat(2,1fr)}
+  ol.steps{grid-template-columns:repeat(2,1fr)}
+  .split{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .wrap{padding:14px 14px 56px}
+  .hero{padding:26px 20px; border-radius:18px}
+  section{padding:20px 18px}
+  .cols{grid-template-columns:1fr}
+  ol.steps{grid-template-columns:1fr}
+  .btn{width:100%; justify-content:center}
+}
+</style>
+</head>
+<body>
+  <div class="wrap">
+
+    <div class="bar">
+      <a class="home" href="/">← All apps by Bonggi Cho</a>
+      <a class="bar-cta" href="https://play.google.com/store/apps/details?id=io.cho.photo_read" target="_blank" rel="noopener">Get it on Google Play</a>
+    </div>
+
+    <header class="hero">
+      <div class="grid">
+        <div>
+          <span class="eyebrow">Android app · Free · Contains ads</span>
+          <h1><span class="name">Photo Read</span></h1>
+          <p class="subtitle">Instant photo translator</p>
+          <p class="tagline">Point your camera at a menu, a sign, a medicine label or a notice you can't read. Photo Read picks out the text, translates it into Korean, English, Chinese or Japanese, and reads it aloud — right on your phone.</p>
+          <div class="cta">
+            <a class="btn primary" href="https://play.google.com/store/apps/details?id=io.cho.photo_read" target="_blank" rel="noopener">
+              <svg viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M325.3 234.3 116.7 25.7C110.9 27.9 106.7 33.4 106.7 40.6v430.8c0 7.2 4.2 12.7 10 14.9l208.6-208.6c7.4-7.4 7.4-19.3 0-26.7l.7-.7zM373.1 279.4l-52.1-52.1-72.4 72.4 72.4 72.4 52.1-52.1c14.8-8.5 14.8-32.1 0-40.6zM339.9 226.2 131.4 17.6c5.3-2.4 11.6-1.7 16.9 1.4l214.5 122.9-22.9 84.3zM131.3 494.4c-5.3 3.1-11.6 3.8-16.9 1.4l208.5-208.6 22.9 84.3-214.5 122.9z"/></svg>
+              Download on Google Play
+            </a>
+            <a class="btn" href="#how">See how it works</a>
+          </div>
+          <p class="free-line">Free to install · No account or sign-up · For Android phones</p>
+        </div>
+        <div>
+          <img class="appicon" src="images/photo-read-icon.png" width="512" height="512" alt="Photo Read app icon: a white camera with sound waves">
+        </div>
+      </div>
+
+      <div class="chips">
+        <div class="chip"><strong>4 languages</strong><span>Korean, English, Chinese and Japanese.</span></div>
+        <div class="chip"><strong>On your device</strong><span>Photos and recognised text stay on the phone.</span></div>
+        <div class="chip"><strong>Read aloud</strong><span>The translation is spoken, not just shown.</span></div>
+        <div class="chip"><strong>One big button</strong><span>Large controls and a simple screen.</span></div>
+      </div>
+    </header>
+
+    <main>
+
+      <section id="what">
+        <h2>What Photo Read does</h2>
+        <p class="lede">Three things, in the order you need them.</p>
+        <div class="cols">
+          <div class="box">
+            <span class="ico">1</span>
+            <h3>Reads the text in a photo</h3>
+            <p>Take a picture of the text you want to understand. The app recognises the characters for you — no typing, no cropping, no selection box.</p>
+          </div>
+          <div class="box">
+            <span class="ico">2</span>
+            <h3>Translates it into your language</h3>
+            <p>Choose the language you want to read in. Text in any of the supported languages can be translated into the one you picked.</p>
+          </div>
+          <div class="box">
+            <span class="ico">3</span>
+            <h3>Speaks the result out loud</h3>
+            <p>Tap confirm and, after a short ad, the translation is read to you with voice — useful when you would rather listen than squint.</p>
+          </div>
+          <div class="box">
+            <span class="ico">4</span>
+            <h3>Stays out of the way</h3>
+            <p>No account, no setup, no manual. Large buttons and a simple screen so it works for parents and grandparents too.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="uses">
+        <h2>Made for the moments you get stuck</h2>
+        <p class="lede">Real situations Photo Read is built around.</p>
+        <ul>
+          <li><b>Travelling</b> — restaurant menus, subway and bus signs, notices at your hotel or guesthouse.</li>
+          <li><b>At the pharmacy or convenience store</b> — ingredients lists, dosage instructions on a medicine packet or leaflet.</li>
+          <li><b>Small print</b> — bills, forms and manuals printed too small to read comfortably.</li>
+          <li><b>Listening instead of reading</b> — have a notice or document read out to you.</li>
+          <li><b>Foreign documents</b> — product descriptions and paperwork you need to check.</li>
+          <li><b>Helping someone else</b> — read a label or letter aloud for a parent or relative.</li>
+        </ul>
+      </section>
+
+      <section id="how">
+        <h2>How it works</h2>
+        <p class="lede">Four steps, about as long as it takes to open the camera.</p>
+        <ol class="steps">
+          <li><b>Choose a language</b>Pick the language you want to read in.</li>
+          <li><b>Take a photo</b>Frame the text — a menu, a sign, a label — and shoot.</li>
+          <li><b>Check the translation</b>The recognised text and the translation appear together.</li>
+          <li><b>Listen</b>Press confirm, watch a short ad, and the text is read aloud.</li>
+        </ol>
+
+        <div class="split" style="margin-top:22px">
+          <div>
+            <h3>The languages</h3>
+            <p style="color:#3d4753;font-size:14.5px;margin-top:6px">Photo Read currently reads and translates these four languages, in any direction:</p>
+            <div class="langs">
+              <span>한국어 Korean</span>
+              <span>English</span>
+              <span>中文 Chinese</span>
+              <span>日本語 Japanese</span>
+            </div>
+            <p style="margin-top:14px;font-size:13.5px;color:var(--muted)">The first time you use a language, its language file is downloaded, so that first use needs an internet connection. After that, photos can be read and translated without data.</p>
+          </div>
+          <div class="example" aria-label="Example of a photo read on a menu">
+            <div class="cap">Example · a restaurant menu</div>
+            <div class="row"><small>Original · English</small>Today's Special<br>Grilled Salmon $18</div>
+            <div class="row"><small>Recognised text</small>Today's Special · Grilled Salmon $18</div>
+            <div class="row translated"><small>Translated · Korean</small>오늘의 특선 · 구운 연어 18달러</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="price">
+        <h2>Free, with a short ad for the voice</h2>
+        <p>Photo Read is free to install and free to use — there is no subscription and nothing to buy. The app is supported by ads, and one short ad unlocks the read-aloud voice for that photo. Everything else works without paying.</p>
+        <p style="margin-top:12px;color:var(--muted);font-size:14.5px">Reading, translating and copying the text out costs nothing; only the spoken version asks you to watch an ad.</p>
+      </section>
+
+      <section id="privacy">
+        <h2>Your photos stay on your phone</h2>
+        <p>Photos you take and the text recognised from them are processed on your device and are not sent to a server. The app does not ask you to create an account, and no sign-in is required to use it.</p>
+        <p style="margin-top:10px">The full policy, including how advertising works in the app, is here:
+          <a href="privacy-photo-read.html">Photo Read privacy policy</a>.</p>
+      </section>
+
+      <section id="notes">
+        <h2>Good to know</h2>
+        <div class="cols">
+          <div class="box">
+            <h3>Accuracy</h3>
+            <p>Blurry photos and handwriting can be recognised less accurately. A steady shot of printed text works best.</p>
+          </div>
+          <div class="box">
+            <h3>Voice data</h3>
+            <p>On some devices you may need to install the voice data for a language in the system settings before it can be read aloud.</p>
+          </div>
+          <div class="box">
+            <h3>Android only</h3>
+            <p>Photo Read is an Android app and is not available on iPhone or iPad.</p>
+          </div>
+          <div class="box">
+            <h3>Important information</h3>
+            <p>For dosage, allergies and anything medical, check the original text alongside the translation rather than relying on the translation alone.</p>
+          </div>
+        </div>
+        <p class="note" style="margin-top:16px"><b>Contains ads.</b> Photo Read is free because the app shows advertising. Ads are provided by Google AdMob; see the privacy policy for details.</p>
+      </section>
+
+      <section id="download" style="text-align:center">
+        <h2>Try Photo Read on your next trip</h2>
+        <p class="lede" style="margin-bottom:18px">Free on Google Play for Android phones.</p>
+        <div class="cta" style="justify-content:center">
+          <a class="btn primary" href="https://play.google.com/store/apps/details?id=io.cho.photo_read" target="_blank" rel="noopener">
+            <svg viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M325.3 234.3 116.7 25.7C110.9 27.9 106.7 33.4 106.7 40.6v430.8c0 7.2 4.2 12.7 10 14.9l208.6-208.6c7.4-7.4 7.4-19.3 0-26.7l.7-.7zM373.1 279.4l-52.1-52.1-72.4 72.4 72.4 72.4 52.1-52.1c14.8-8.5 14.8-32.1 0-40.6zM339.9 226.2 131.4 17.6c5.3-2.4 11.6-1.7 16.9 1.4l214.5 122.9-22.9 84.3zM131.3 494.4c-5.3 3.1-11.6 3.8-16.9 1.4l208.5-208.6 22.9 84.3-214.5 122.9z"/></svg>
+            Get Photo Read on Google Play
+          </a>
+        </div>
+        <p class="free-line" style="margin-top:14px">Free · Android · Contains ads · <a href="privacy-photo-read.html">Privacy policy</a></p>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="links">
+        <a href="/">All apps</a>
+        <a href="privacy-photo-read.html">Privacy policy</a>
+        <a href="mailto:cho1036216@gmail.com">cho1036216@gmail.com</a>
+        <a href="https://play.google.com/store/apps/details?id=io.cho.photo_read" target="_blank" rel="noopener">Google Play</a>
+      </div>
+      <div>Photo Read (사진 번역 및 음성 안내) · an Android app by 조봉기 (Bonggi Cho) · © 2026</div>
+      <div style="margin-top:4px">Page last updated: 23 November 2026</div>
+    </footer>
+  </div>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Photo Read",
+    "alternateName": "Photo Read - Scan & Translate",
+    "applicationCategory": "TravelApplication",
+    "operatingSystem": "Android",
+    "url": "https://cho9199.github.io/photo-read.html",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=io.cho.photo_read",
+    "description": "Photo Read reads the text in a photo, translates it into Korean, English, Chinese or Japanese, and reads it out loud. Photos are processed on the device.",
+    "inLanguage": ["en", "ko", "zh", "ja"],
+    "author": {"@type": "Person", "name": "Bonggi Cho"},
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+  }
+  </script>
+</body>
+</html>
