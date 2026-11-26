@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Photo Size Reducer - Compress photos to the exact KB you need (Android)</title>
+  <meta name="description" content="Photo Size Reducer is a free Android app that compresses photos to the exact KB size you choose - 100 KB, 200 KB, 500 KB, 1 MB or any custom target - and to an exact pixel width and height. Batch compress, convert to JPG, PNG or WebP. Everything runs on your device: no upload, originals kept, EXIF location removed.">
+  <link rel="canonical" href="https://cho9199.github.io/uploadready.html">
+  <link rel="icon" type="image/png" href="images/uploadready/icon-512.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Photo Size Reducer - Compress photos to the exact KB you need">
+  <meta property="og:description" content="Shrink photos to the exact KB and pixel size an upload form asks for. Batch compress, JPG/PNG/WebP, processed on your device. Free Android app.">
+  <meta property="og:url" content="https://cho9199.github.io/uploadready.html">
+  <meta property="og:image" content="https://cho9199.github.io/images/uploadready/feature-graphic-1024x500.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <style>
+:root{
+  --bg:#f4f6f9; --card:#ffffff; --ink:#161b22; --muted:#5b6672; --line:#e3e8ef;
+  --accent:#0f8a5f; --accent-deep:#0a6b49; --accent-soft:#e7f7f0;
+  --radius:16px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Apple SD Gothic Neo","Noto Sans",Roboto,Helvetica,Arial,sans-serif;
+  font-size:16px; line-height:1.7; overflow-wrap:break-word; -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent); text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:940px; margin:0 auto; padding:20px 20px 72px}
+
+.bar{display:flex; flex-wrap:wrap; gap:10px 18px; align-items:center; justify-content:space-between;
+  font-size:14px; color:var(--muted); padding:6px 2px 16px}
+.bar a.home{font-weight:700; color:var(--ink)}
+.bar .bar-cta{display:inline-flex; align-items:center; gap:7px; font-weight:700; font-size:13.5px;
+  color:#fff; background:var(--accent); border-radius:999px; padding:7px 14px}
+.bar .bar-cta:hover{background:var(--accent-deep); text-decoration:none}
+
+.hero{position:relative; overflow:hidden; background:linear-gradient(180deg,#eafaf2 0%,#ffffff 68%);
+  border:1px solid var(--line); border-radius:22px; padding:40px 36px 34px;
+  box-shadow:0 1px 2px rgba(16,24,40,.04),0 18px 40px -28px rgba(15,138,95,.45)}
+.hero .grid{display:grid; grid-template-columns:1.25fr 1fr; gap:32px; align-items:center}
+.eyebrow{display:inline-block; font-size:12px; font-weight:800; letter-spacing:.09em; text-transform:uppercase;
+  color:var(--accent); background:var(--accent-soft); border-radius:999px; padding:4px 11px}
+h1{margin:14px 0 0; font-size:clamp(30px,4.6vw,42px); line-height:1.15; letter-spacing:-.02em}
+.subtitle{margin:6px 0 0; font-size:clamp(17px,2.3vw,20px); font-weight:700; color:var(--accent)}
+.tagline{margin:14px 0 0; font-size:16.5px; color:#37414d; max-width:36em}
+.cta{display:flex; flex-wrap:wrap; gap:10px; margin-top:22px}
+.btn{display:inline-flex; align-items:center; gap:9px; font-size:15px; font-weight:700; padding:12px 20px;
+  border-radius:12px; border:1px solid var(--line); background:#fff; color:var(--ink); cursor:pointer}
+.btn:hover{text-decoration:none; border-color:#c9d4e3; background:#fafcff}
+.btn.primary{background:var(--accent); border-color:var(--accent); color:#fff; box-shadow:0 8px 18px -12px rgba(15,138,95,.9)}
+.btn.primary:hover{background:var(--accent-deep); border-color:var(--accent-deep)}
+.btn svg{width:18px; height:18px; flex:0 0 auto}
+.free-line{margin:12px 0 0; font-size:13.5px; color:var(--muted)}
+.appicon{display:block; width:100%; max-width:230px; margin:0 auto; border-radius:26%;
+  box-shadow:0 18px 34px -18px rgba(16,24,40,.45)}
+
+.chips{display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:26px 0 0}
+.chip{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 16px}
+.chip strong{display:block; font-size:14.5px; margin-bottom:3px}
+.chip span{font-size:13px; color:var(--muted); line-height:1.55}
+
+main{margin-top:26px}
+section{background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+  padding:26px 28px; margin-bottom:16px; scroll-margin-top:20px}
+h2{margin:0 0 6px; font-size:21px; line-height:1.4; letter-spacing:-.01em}
+.lede{margin:0 0 18px; color:var(--muted); font-size:15px}
+h3{margin:0 0 4px; font-size:15.5px}
+p{margin:0 0 10px}
+p:last-child{margin-bottom:0}
+ul{margin:6px 0 0; padding-left:20px}
+li{margin:6px 0}
+.cols{display:grid; grid-template-columns:repeat(2,1fr); gap:16px}
+.box{border:1px solid var(--line); border-radius:12px; padding:16px 18px; background:#fbfcfe}
+.box p{font-size:14.5px; color:#3d4753; margin:6px 0 0}
+.ico{display:inline-flex; width:28px; height:28px; border-radius:9px; background:var(--accent-soft);
+  color:var(--accent); align-items:center; justify-content:center; font-size:15px; font-weight:800; margin-bottom:6px}
+ol.steps{counter-reset:s; list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(4,1fr); gap:14px}
+ol.steps li{counter-increment:s; margin:0; border:1px solid var(--line); border-radius:12px; padding:16px;
+  font-size:14.5px; color:#3d4753; background:#fbfcfe}
+ol.steps li::before{content:counter(s); display:inline-flex; width:24px; height:24px; border-radius:50%;
+  background:var(--accent); color:#fff; font-size:12.5px; font-weight:800; align-items:center;
+  justify-content:center; margin-bottom:8px}
+ol.steps b{display:block; color:var(--ink); font-size:14.5px; margin-bottom:2px}
+.presets{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+.presets span{font-size:14px; font-weight:700; border:1px solid var(--line); background:#fbfcfe;
+  border-radius:999px; padding:6px 14px}
+.note{background:#fff8ec; border:1px solid #f5e0bd; border-radius:12px; padding:14px 16px; font-size:14px; color:#6c4a12}
+.note b{color:#5a3d0c}
+.shots{display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:8px}
+.shots img{width:100%; height:auto; border:1px solid var(--line); border-radius:12px; display:block}
+.split{display:grid; grid-template-columns:1.1fr 1fr; gap:24px; align-items:start}
+.example{border:1px solid var(--line); border-radius:14px; overflow:hidden; background:#fbfcfe}
+.example .cap{font-size:11.5px; font-weight:800; letter-spacing:.07em; text-transform:uppercase; color:var(--muted);
+  padding:9px 14px; border-bottom:1px solid var(--line); background:#f1f5fb}
+.example .row{padding:13px 14px; border-bottom:1px solid var(--line); font-size:14.5px}
+.example .row:last-child{border-bottom:0}
+.example .row small{display:block; font-size:11.5px; font-weight:700; letter-spacing:.05em; color:var(--muted);
+  text-transform:uppercase; margin-bottom:2px}
+.example .row.done{background:var(--accent-soft)}
+footer{margin-top:24px; font-size:14px; color:var(--muted)}
+footer .links{display:flex; flex-wrap:wrap; gap:8px 20px; margin-bottom:10px}
+footer .links a{font-weight:600}
+@media (max-width:820px){
+  .hero .grid{grid-template-columns:1fr; gap:22px}
+  .appicon{max-width:150px; order:-1}
+  .chips{grid-template-columns:repeat(2,1fr)}
+  ol.steps{grid-template-columns:repeat(2,1fr)}
+  .split{grid-template-columns:1fr}
+  .shots{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:560px){
+  .wrap{padding:14px 14px 56px}
+  .hero{padding:26px 20px; border-radius:18px}
+  section{padding:20px 18px}
+  .cols{grid-template-columns:1fr}
+  ol.steps{grid-template-columns:1fr}
+  .btn{width:100%; justify-content:center}
+}
+</style>
+</head>
+<body>
+  <div class="wrap">
+
+    <div class="bar">
+      <a class="home" href="/">← All apps by Bonggi Cho</a>
+      <a class="bar-cta" href="https://play.google.com/store/apps/details?id=com.cho.uploadready" target="_blank" rel="noopener">Get it on Google Play</a>
+    </div>
+
+    <header class="hero">
+      <div class="grid">
+        <div>
+          <span class="eyebrow">Android app · Free · Contains ads</span>
+          <h1>Photo Size Reducer</h1>
+          <p class="subtitle">Compress photos to the exact KB you need</p>
+          <p class="tagline">Ever hit “file is too large” when uploading a photo? Photo Size Reducer shrinks your photos to the KB size an application form asks for — 100 KB, 200 KB, 500 KB, 1 MB or any number you type — on your own phone, without sending them anywhere.</p>
+          <div class="cta">
+            <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.cho.uploadready" target="_blank" rel="noopener">
+              <svg viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M325.3 234.3 116.7 25.7C110.9 27.9 106.7 33.4 106.7 40.6v430.8c0 7.2 4.2 12.7 10 14.9l208.6-208.6c7.4-7.4 7.4-19.3 0-26.7l.7-.7zM373.1 279.4l-52.1-52.1-72.4 72.4 72.4 72.4 52.1-52.1c14.8-8.5 14.8-32.1 0-40.6zM339.9 226.2 131.4 17.6c5.3-2.4 11.6-1.7 16.9 1.4l214.5 122.9-22.9 84.3zM131.3 494.4c-5.3 3.1-11.6 3.8-16.9 1.4l208.5-208.6 22.9 84.3-214.5 122.9z"/></svg>
+              Download on Google Play
+            </a>
+            <a class="btn" href="#how">See how it works</a>
+          </div>
+          <p class="free-line">Free to install · No account or sign-up · Works without an internet connection</p>
+        </div>
+        <div>
+          <img class="appicon" src="images/uploadready/icon-512.png" width="512" height="512" alt="Photo Size Reducer app icon">
+        </div>
+      </div>
+
+      <div class="chips">
+        <div class="chip"><strong>Any target size</strong><span>100 KB, 200 KB, 500 KB, 1 MB or type your own.</span></div>
+        <div class="chip"><strong>Exact pixels</strong><span>Set the width and height a form asks for.</span></div>
+        <div class="chip"><strong>On your device</strong><span>Photos are never uploaded to a server.</span></div>
+        <div class="chip"><strong>Originals kept</strong><span>Results are saved as new files.</span></div>
+      </div>
+    </header>
+
+    <main>
+
+      <section id="what">
+        <h2>What it does</h2>
+        <p class="lede">Four things, in the order you need them.</p>
+        <div class="cols">
+          <div class="box">
+            <span class="ico">1</span>
+            <h3>Compresses to the size you pick</h3>
+            <p>Tap a preset — 100 KB, 200 KB, 500 KB or 1 MB — or type any target size. The app adjusts quality step by step until the photo fits.</p>
+          </div>
+          <div class="box">
+            <span class="ico">2</span>
+            <h3>Resizes to exact pixels</h3>
+            <p>When a form asks for a specific width and height, enter the numbers and the photo is resized to those dimensions.</p>
+          </div>
+          <div class="box">
+            <span class="ico">3</span>
+            <h3>Handles many photos at once</h3>
+            <p>Compress a batch in one go and see the size before and after, with the percentage you saved.</p>
+          </div>
+          <div class="box">
+            <span class="ico">4</span>
+            <h3>Converts the format</h3>
+            <p>Save results as JPG, PNG or WebP, then keep them or share them straight away.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="uses">
+        <h2>Made for the “file is too large” moment</h2>
+        <p class="lede">Everyday situations the app is built around.</p>
+        <ul>
+          <li><b>Job, school and visa applications</b> — photo upload fields with a strict KB and pixel limit.</li>
+          <li><b>Online documents and ID photos</b> — a passport-style photo or a scan that has to fit the upload box.</li>
+          <li><b>Selling online</b> — product photos that are too heavy for a shop or marketplace listing.</li>
+          <li><b>Email and messengers</b> — sending photos without huge attachments.</li>
+          <li><b>Website forms</b> — sign-ups and applications that reject images over a certain size.</li>
+        </ul>
+      </section>
+
+      <section id="how">
+        <h2>How it works</h2>
+        <p class="lede">Four steps, about as long as it takes to pick a photo.</p>
+        <ol class="steps">
+          <li><b>Pick photos</b>Choose one photo or several for a batch.</li>
+          <li><b>Choose a size</b>Tap a preset or type a target KB, and the pixels if they matter.</li>
+          <li><b>Compress</b>The app lowers quality and resolution step by step until the target is met.</li>
+          <li><b>Save or share</b>Results are saved as new files; your originals stay untouched.</li>
+        </ol>
+
+        <div class="split" style="margin-top:22px">
+          <div>
+            <h3>Common targets</h3>
+            <p style="color:#3d4753;font-size:14.5px;margin-top:6px">Presets cover the sizes most upload forms ask for — and you can type any number instead.</p>
+            <div class="presets">
+              <span>100 KB</span><span>200 KB</span><span>500 KB</span><span>1 MB</span><span>custom</span>
+            </div>
+            <p style="margin-top:14px;font-size:13.5px;color:var(--muted)">Formats: JPG, PNG and WebP. Batch compression works offline; batches of more than 5 photos can be unlocked by watching an ad.</p>
+          </div>
+          <div class="example" aria-label="Example of a photo compressed to a target size">
+            <div class="cap">Example · a photo for an online application</div>
+            <div class="row"><small>Original</small>3.8 MB · 4032 × 3024</div>
+            <div class="row"><small>Target</small>Under 200 KB</div>
+            <div class="row done"><small>Result</small>184 KB · 1200 × 900 · EXIF location removed</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="screens">
+        <h2>Screenshots</h2>
+        <p class="lede">From the Google Play listing.</p>
+        <div class="shots">
+          <img src="images/uploadready/shot-en-1.png" alt="Screenshot 1 of Photo Size Reducer">
+          <img src="images/uploadready/shot-en-2.png" alt="Screenshot 2 of Photo Size Reducer">
+          <img src="images/uploadready/shot-en-3.png" alt="Screenshot 3 of Photo Size Reducer">
+          <img src="images/uploadready/shot-en-4.png" alt="Screenshot 4 of Photo Size Reducer">
+        </div>
+      </section>
+
+      <section id="price">
+        <h2>Free, with ads</h2>
+        <p>Photo Size Reducer is free to install and free to use. There is no subscription and nothing to buy. The app is supported by ads, and a batch of more than five photos is unlocked by watching an ad.</p>
+      </section>
+
+      <section id="privacy">
+        <h2>Your photos stay on your phone</h2>
+        <p>Photos are processed only on your device. Nothing is uploaded to a server, and the app does not ask you to create an account or sign in. Your original files are never overwritten — results are saved as new files — and location data (EXIF) is removed during conversion.</p>
+      </section>
+
+      <section id="notes">
+        <h2>Good to know</h2>
+        <div class="cols">
+          <div class="box">
+            <h3>Resolution can drop</h3>
+            <p>To reach a very small target size, the app may reduce resolution as well as quality. The before-and-after sizes are shown so you can check the result.</p>
+          </div>
+          <div class="box">
+            <h3>Android only</h3>
+            <p>Photo Size Reducer is an Android app (Android 7.0 and later). WebP conversion is available on Android.</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="links">
+        <a href="https://play.google.com/store/apps/details?id=com.cho.uploadready" target="_blank" rel="noopener">Google Play listing</a>
+        <a href="/">Other apps</a>
+        <a href="mailto:cho1036216@gmail.com">cho1036216@gmail.com</a>
+      </div>
+      <div>Photo Size Reducer is made by Bonggi Cho (조봉기), an independent Android developer in Seoul, South Korea.</div>
+    </footer>
+
+  </div>
+</body>
+</html>
